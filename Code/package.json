@@ -1,0 +1,16 @@
+{
+    "name": "arhsr2",
+    "version": "1.0",
+    "main": "index.js",
+    "Author": "AZERTY#9999",
+    "license": "MIT",
+    "dependencies": {
+        "chromedriver": "^105.0.0",
+        "selenium-webdriver": "^4.4.0"
+    },
+    "author": "AZERTY#9999",
+    "keywords": [],
+    "scripts": {
+        "start": "node index.js"
+    }
+}
