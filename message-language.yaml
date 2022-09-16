@@ -1,0 +1,926 @@
+fr:
+  Language: fr
+  ErrorPreventer: Une erreur est survenue
+  ErrorPreventerReportSent: Un rapport a été envoyé
+  UserErrorNoPermissions: Vous n'avez pas les permissions de faire ceci
+  MeErrorNoPermissions: Je n'ai pas les permissions de faire ceci
+  MeErrorInsufficientPermissions: Je n'ai pas les permissions suffisantes pour faire ceci
+  UnavailableMPCommand: Cette Commande n'est pas disponible en Messages Privées
+  UserError:
+    InvalidSyntax: Syntaxe invalide {0} {1} {2} {3} {4}
+    SpecifyUser: Veuillez préciser un utilisateur
+    SpecifyID: Veuillez préciser un ID
+    SpecifyUserID: Veuillez préciser un ID d'Utilisateur
+    SpecifyChannelID: Veuillez préciser un ID de Salon
+    SpecifyServerID: Veuillez préciser un ID de Serveur
+    SpecifyReason: Veuillez préciser une raison
+    SpecifyColor: Veuillez préciser une couleur
+    SpecifyValidStatus: Veuillez définir un status valide (online, idle, dnd, offline)
+    SpecifyTitle: Veuillez préciser un titre
+    SpecifyMessage: Veuillez préciser un message
+    SpecifyName: Veuillez préciser un nom
+    SpecifyTitleOrMessage: Veuillez préciser un titre ou un message
+    SpecifyWish: Veuillez spécifier un souhait
+    SpecifyMention: Veuillez préciser la mention
+    SpecifyNumber: Veuillez préciser un nombre
+    SpecifyLanguage: Veuillez préciser la langue {0}
+    SpecifyNumberGreaterThan0: Veuillez préciser un nombre supérieur à 0
+    InvalidMention: Mention invalide
+    UnknownRole: Rôle inconnu
+    SpecifyDuration: 'Veuillez préciser une durée (ex: 1h, 3d, 2w, def)'
+    SpecifyDurationRedeemPremium: Veuillez préciser une durée (2m, 6m, 12m, lifetime)
+    InvalidNumber: Nombre invalide
+    SpecifyRules: Veuillez préciser un règlement
+    SpecifyONOFF: Veuillez définir ceci sur ON/OFF
+    SpecifyVariableXP: Veuillez préciser une variable (level/messages)
+    SpecifyTest: Veuillez préciser un test
+    SpecifyWebhookURL: Veuillez préciser le lien du Webhook
+    SpecifyLink: Veuillez préciser un lien
+    SpecifyQuestion: Veuillez préciser une question
+    SpecifyMessageID: Veuillez préciser l'ID du message
+    PollSpecifyAction: Veuillez spécifier une action (start, stop)
+    SpecifyMessagePollID: Veuillez préciser l'ID du message du sondage
+    SpecifyCode: Veuillez spécifier du Code
+    ReplyMessage: Veuillez répondre à un message
+    SpecifyBadword: Veuillez préciser un Gros-mot
+    SpecifyPrefix: Veuillez préciser un préfix
+    SpecifyChannelFirst: Vous devez d'abord définir le salon
+    SpecifyText: Veuillez préciser du texte
+    SpecifyEmoji: Veuillez spécifier un Emoji
+    StatusSpecifyNameIfActionSpecified: Veuillez spécifier une Action si vous avez spécifié un Type d'Action
+    SpecifyTextChannel: Veuillez spécifier un Salon Textuel
+  Error:
+    SpecifyValidUser: Veuillez préciser un Utilisateur valide
+    SpecifyValidDuration: 'Veuillez préciser une durée valide (ex: 1h, 3d, 2w, def)'
+    SpecifyValidDate: Veuillez préciser une date valide
+    SpecifyValidRole: Veuillez préciser un rôle valide
+    SpecifyValidEmoji: Veuillez préciser un émoji valide
+    SpecifyValidWebhookURL: Veuillez préciser un lien Webhook valide
+    SpecifyValidChannelID: Veuillez préciser un ID de salon valide
+    SpecifyValidLanguage: Veuillez préciser un langue valide {0}
+    SpecifyValidID: Veuillez préciser un ID valide
+    UnknownModuleCategory: Ce module ou cette catégorie n'est pas reconnue
+    NoPermissionsToBan: Je n'ai pas les permissions suffisantes pour ban cet utilisateur
+    UnableToBan: Impossible de ban cet utilisateur
+    UnableToDeleteThisNumberOfMessages: Impossible de supprimer ce nombre de message
+    UnableToKick: Impossible de kick cet utilisateur
+    NoPermissionsToKick: Je n'ai pas les permissions suffisantes pour kick cet utilisateur
+    YouAreAlone: "Vous êtes seul \U0001F613"
+    EmptyRules: Le règlement est vide
+    NoUserIsBanned: Aucun utilisateur n'est banni
+    ThisUserIsNotBanned: Cet utilisateur n'est pas banni
+    ThisUserIsNotMuted: Cet utilisateur n'est pas Mute
+    UnableToTranslate: Impossible de traduire
+    XPSystemIsDisabled: Le système d'XP est désactivé sur ce serveur
+    UnableToBlacklistBotsOwner: Impossible de blacklister le propriétaire du bot
+    UserAlreadyBlacklisted: Cet utilisateur est déjà Blacklisté
+    UserNotBlacklisted: Cet utilisateur n'est pas Blacklisté
+    NoFileWasSended: Aucun fichier n'a été envoyé
+    SpecifyValidLink: Veuillez préciser un lien valide
+    UnknownBlockedLink: Ce lien n'est pas bloqué
+    UnableDeleteMessages: Impossible de supprimer plus de {0} messages
+    UnableDeleteOldMessages: Impossible de supprimer des messages agés de plus de 14 jours
+    UnableDelete0Messages: Impossible de supprimer 0 message
+    SpecifyDurationBetween: Veuillez préciser un délai entre {0} et {1} secondes
+    SpecifyNumberBetween: Veuillez préciser un nombre entre {0} et {1}
+    ClearlagError: Impossible de Clearlag ce nombre de messages
+    PollSpecifyValidAction: Veuillez spécifier une action valide (start, stop)
+    XPSystemAlready: Le système d'XP est déjà sur {0}
+    BadwordsSystemAlready: Le système d'Anti Gros-Mots est déjà sur {0}
+    InvalidPoll: Ce message n'est pas un sondage valide
+    SpecifyDurationBetween0and21600: Veuillez préciser un délai entre 0 et 21600 secondes
+    ReplyMessage: Veuillez répondre à un message
+    UnableSendMessageAsked: Impossible d'envoyer le message demandé
+    UserBlockedMe: L'utilisateur m'a bloqué
+    YouBlockedMe: Vous m'avez bloqué 😓
+    CantRespondYou: Je ne peux pas vous répondre dans
+    UnableToDeleteMessage: Impossible de supprimer ce message
+    BadwordNotExist: Ce Gros-mot n'est pas dans la liste
+    BadwordAlreadyExist: Ce Gros-mot est déjà dans la liste
+    NotEnoughtCoins: Vous n'avez **pas assez de pièces**. Vous pouvez en obtenir en __Invitant d'autres Utilisateurs__.
+    AlreadyPremium: Ce serveur a **déjà les Fonctionnalités Premium**
+    InvalidLanguage: Langage invalide (fr, en, us)
+    AlreadyOn: Le {0} est **déjà** sur **{1}**
+    NotNSFW: Ce salon n'est pas NSFW 😏
+    NotAllowed: Vous n'êtes pas autorisé a exécuter cette commande
+    MemberNotFound: Ce Membre est introuvable
+    Error: Une erreur est survenue
+    AutoroleRoleNotSet: Vous devez définir un Rôle a donner avec /autorole setrole
+    RoleNotFound: Ce Rôle n'est pas dans la liste
+    RoleAlreadyInList: Ce Rôle est déjà dans la liste
+    UserNotWaitingReply: Cet Utilisateur n'est pas en attente de réponse
+    NoOperationInProgress: Aucune opération n'est en cours
+    /login: Veuillez vous connecter en utilisant /login
+    EmailAlreadyTaken: Cet Email est déjà pris
+    AlreadyReserved: 
+      Vous avez déjà réservé pour ce jour.
+      Pour déréserver, tapez /déréserver
+    InvalidReservation: Réservation Invalide
+  Success:
+    # RulesWasSended: Le règlement vous a été envoyé en messages privés
+    RulesWasSended: Le règlement a été envoyé avec succès
+    DownloadSuccess: "**{0}** Téléchargé avec succès"
+    SentSuccess: Envoyé avec succès
+    DeletedMessage: Message supprimé avec succès
+    Deleted: Supprimé avec succès
+    ChangedStatus: Le Status a bien été changé sur **{0}**
+    ChangedRole: Le Rôle a bien été changé sur {0}
+    AutoroleAddedRole: Le Rôle {0} a été ajouté à l'Autorole
+    AutoroleRemovedRole: Le Rôle {0} a été enlevé de l'Autorole
+    ReactionroleAddedRole: Vous avez reçu le Rôle {0}
+    ReactionroleRemovedRole: Vous avez perdu le Rôle {0}
+  Permissions:
+    ADMINISTRATOR: Administrateur
+    BAN_MEMBERS: Bannir des Membres
+    KICK_MEMBERS: Kick des Membres
+    MANAGE_MESSAGES: Gérer les Messages
+    MANAGE_CHANNELS: Gérer les Salons
+    MANAGE_ROLES: Gérer les Rôles
+    CHANGE_NICKNAME: Changer les Pseudos
+    MANAGE_NICKNAMES: Gérer les Pseudos
+  NewLanguage: Nouvelle langue
+  NewPrefix: Nouveau Préfix
+  HelpPage:
+    Title: Page d'Aide
+    Description: |-
+      <argument> Argument obligatoire
+      (<argument>) Argument facultatif
+      [<argument>] Argument nécessaire aux facultatifs
+    Categories:
+      Default: Commandes de base ou nécessaires
+      Moderation: Commandes de contrôle
+      Utility: Commandes Supplémentaires et utiles
+      Fun: Commandes d'amusement
+      Custom: Commandes Custom
+  InviteLink: Voici mon lien d'invitation
+  BanDescription: Un utilisateur a été banni du serveur
+  KickDescription: Un utilisateur a été kick du serveur
+  MuteDescription: Un utilisateur a été mute
+  UnmuteDescription: Un utilisateur a été unmute
+  ReportDescription: Un utilisateur a été rapporté
+  WarnDescription: Un utilisateur a été avertit
+  Moderator: Modérateur
+  Member: Membre
+  Reason: Raison
+  Duration: Durée
+  Reporter: Rapporteur
+  WarnedMember: Membre Avertit
+  Announcement: Annonce
+  ChannelLockedFor: Ce salon a été verrouillé pour
+  ChannelUnlockedFor: Ce salon a été déverrouillé pour
+  AutoUnmuteAfter: Unmute automatique au bout de
+  UserAutoUnmuteAfter: Un utilisateur a été unmute automatiquement au bout de
+  UnmuteMSG1: Tu as été unmute de
+  UnmuteMSG2: automatiquement au bout de
+  ActualPrefix: Le préfix actuel est
+  Ads: Publicité
+  Roll1: Dé à
+  Roll2: faces
+  Rules: Règlement
+  RulesUpdate: Règlement Mis à Jour
+  RulesUpdated: Le règlement a été mis à jour
+  RulesDelete: Règlement Supprimé
+  RulesDeleted: Le règlement du serveur a été supprimé
+  RulesSyntaxUser: Envoie le règlement du serveur
+  RulesSyntaxSend: Envoie le règlement du serveur dans le salon actuel
+  RulesSyntaxSet: Défini le règlement
+  RulesSyntaxDelete: Supprime le règlement actuel
+  By: par
+  Deleted: supprimées
+  sPrefixChanged: Le préfix a été changé en
+  sPrefixUpdate: Préfix Mis à Jour
+  sJoinMessageChanged: Le join-message a été mis sur
+  sJoinMessageUpdate: Join-Message Mis à Jour
+  sJoinMessageChannelChanged: Le salon du join-message a été changé sur
+  sLeaveMessageChanged: Le leave-message a été mis sur
+  sLeaveMessageUpdate: Leave-Message Mis à Jour
+  sLeaveMessageChannelChanged: Le salon du leave-message a été changé sur
+  sAutoReactChanged: L'Auto-react a été mis sur
+  sAutoReactUpdate: Auto-React Mis à Jour
+  sSyntaxHelp: Affiche cette page
+  sSyntaxInfo: Donne la liste des paramètres et des valeurs
+  sSyntaxPrefix: Change le préfix
+  sSyntaxJoinMessage: Configure le join message
+  sSyntaxLeaveMessage: Configure le leave message
+  sSyntaxAutoReact: Permet au bot de réagir aux messages contenants des mots-clés
+  sJoinMessageSyntaxHelp: Affiche cette page
+  sJoinMessageSyntaxOnOff: Active/désactive le join-message
+  sJoinMessageSyntaxSetChannel: Paramètre le salon où le join-message va être envoyé
+  sLeaveMessageSyntaxHelp: Affiche cette page
+  sLeaveMessageSyntaxOnOff: Active/désactive le leave-message
+  sLeaveMessageSyntaxSetChannel: Paramètre le salon où le leave-message va être envoyé
+  ServerName: Nom du Server
+  CreatedAt: Créé le
+  TotalMembers: Total des Membres
+  Time: Temps
+  Unspecified: Non spécifié
+  To: à
+  warnsSyntaxHelp: Affiche cette page
+  warnsSyntaxUser: Affiche les warns d'un utilisateur
+  warnsSyntaxAdd: Ajoute des warns à un utilisateur
+  warnsSyntaxRemove: Retire des warns à un utilisateur
+  warnsSyntaxClear: Supprime les warns d'un utilisateur
+  warnsSyntaxClearall: Supprime tous les warns
+  AllWarnsWas: Tous les warns ont été
+  CurrentlyHas: a actuellement
+  AllWarnsOf: Tous les warns de
+  WasDeleted: ont été **supprimés**
+  WarnsOf: Les warns de
+  WasUpdatedFrom: ont été mis à jour de
+  WarnsClearAllConfirm: Êtes-vous sûr de supprimer tous les avertissements de tous les membres du serveur ?
+  Confirm: Confirmer
+  Confirmed: Confirmé
+  LogsSyntaxHelp: Affiche cette page
+  LogsSyntaxList: Affiche La liste des modules de logs
+  LogsSyntaxChannel: Paramètre le salon d'envoie des logs
+  LogsSyntaxOnOff: Active/Désactive un module ou une catégorie de logs
+  AllModulesUpdated: Tous les modules ont été mis sur
+  TheCategory: La catégorie
+  TheModule: Le module
+  WasTurned: a été mis sur
+  LogsChannelUpdated: Le salon des logs a été changé
+  XPSystemTurned: Le système d'XP a été changé sur
+  XPResetedBy: Toute l'XP du serveur a été réinitialisé par
+  XPOf: L'XP de
+  AllXP: Toute l'XP
+  WasResetedBy: a été réinitialisé par
+  XPSyntaxUser: Permet de voir l'XP d'un utilisateur
+  XPSyntaxOnOff: Active/Désactive le système d'XP
+  XPSyntaxSet: Modifie l'XP d'un utilisateur
+  XPSyntaxReset: Réinitialise l'XP d'un utilisateur
+  XPSyntaxResetall: Réinitialise l'XP de tous les utilisateurs
+  OwnerSyntaxEnableDisable: Active/Désactive le bot
+  AddedToBlacklist: a été ajouté à la Blacklist
+  RemovedFromBlacklist: a été supprimé de la Blacklist
+  OwnerBlacklistSyntaxList: Liste les utilisateurs blacklistés
+  OwnerBlacklistSyntaxAdd: Ajoute un utilisateur à la Blacklist
+  OwnerBlacklistSyntaxRemove: Supprime un utilisateur de la Blacklist
+  AdminRoleRetrived: Vous avez le rôle d'administrateur sur
+  UnableToSendDM: Impossible d'envoyer un Message Privé à
+  WithSuccess: avec succès
+  MessageSentTo: Message envoyé à
+  ErrorSpecifyValidUser: 'Erreur: Veuillez préciser un utilisateur valide'
+  AdminPermsUpdated: Admin Perms modifiées avec succès !!!
+  BetaUpdated: Version BETA modifiée avec succès !!! (redémarrage nécessaire)
+  WebhookUpdated: Modification du Webhook des logs effectuée !!!
+  WaitCommandCooldown: Veuillez attendre 3 secondes entre chaques commandes
+  WaitFeedback: Veuillez attendre {delay} minutes avant de renvoyer un Feedback
+  WaitReportBug: Veuillez attendre {delay} minutes avant de renvoyer un Rapport de Bug
+  Blacklisted: |-
+    Oups!!! On dirait que tu as été blacklisté, tu ne peux donc pas utiliser mes commandes.
+    Si tu penses que c'est une erreur, contacte mon développeur.
+  NeedAdminPerms: |-
+    Je ne possède pas les permissions d'Administrateur
+    Pour profiter des fonctionnalitées, veuillez les activer
+  Mentionned: Oui c'est moi ? Pour information mon préfix est
+  TimeElapsed: Temps écoulé
+  Canceled: Annulé
+  WriteFeedback: Veuillez écrire votre message à envoyer
+  SupportDescription: Pour toute question ou demande, rendez-vous sur le [Serveur
+    de support](https://discord.gg/vWDzFa6dFN)
+  MostAskedQuestions: Les questions les plus posées
+  Feedback: Feedback
+  Contact: Contact
+  FaqSuggest: Vous pouvez suggérer toute question sur le [Serveur de support](https://discord.gg/vWDzFa6dFN)
+    ou en utilisant
+  FAQ:
+    Quelles sont les fonctionnalitées disponibles ?: Pour voir ceci, vous pouvez taper la commande `${prefix}help`
+  ContactDescription: Vous pouvez envoyer un `${prefix}feedback` ou nous contacter
+    par **AZERTY#9999**
+  ClearedUntil: "**${messages}** messages supprimés jusqu'à `${LastMessageContent}`"
+  DeletedMessages: "**${messages}** messages supprimés"
+  PollEnded: "\U0001F512 Le sondage est terminé"
+  EmbedClock: HORLOGE
+  DidYouMean: Vouliez-vous dire
+  Name: Nom
+  Version: Version
+  UpdatedAt: Mis à jour le
+  Creator: Créateur
+  ID: ID
+  MemberCount: Nombre de Membres
+  Owner: Propriétaire
+  Type: Type
+  Mention: Mention
+  Color: Couleur
+  Users: Utilisateurs
+  Years: ans
+  Months: mois
+  Days: jours
+  Hours: heures
+  Minutes: minutes
+  Seconds: secondes
+  Username: Nom d'utilisateur
+  AccountCreatedAt: Compte créé le
+  AccountAge: Age du Compte
+  Content: Contenu
+  Author: Auteur
+  ChannelTitle: SALON
+  GuildTitle: SERVEUR
+  RoleTitle: RÔLE
+  MessageTitle: MESSAGE
+  Desktop: Bureau
+  Web: Web
+  Mobile: Mobile
+  None: Aucun
+  UserPresence: Présence d'Utilisateur
+  MemberPresence: Présence de Membre
+  NoPresence: 
+    Désolé, Discord de fournit pas de données pour l'instant.
+    Essayez plus tard
+  Hashtag: Hashtag
+  Flags: Flags
+  Avatar: Avatar
+  Game: Jeu
+  LinkToAvatar: Lien vers l'Avatar
+  User: Utilisateur
+  HighestRole: Plus grand Rôle
+  JoinedAt: Rejoint le
+  DisplayRole: Rôle d'affichage
+  Roles: Rôles
+  Emojis: Émojis
+  Channels: Salons
+  Ago: il y a ${TimeAgo}
+  Status: Status
+  Presence: Présence
+  Activity: Activité
+  Message: Message
+  In: dans
+  Of: de
+  Logs:
+    Name: Nom
+    DisplayName: Nom d'affichage
+    UserID: ID de l'Utilisateur
+    ID: ID
+    Content: Contenu
+    Permissions: Permissions
+    Role: Rôle
+    Old: Ancien
+    New: Nouveau
+    Channel: Salon
+    Emoji: Émoji
+    Topic: Sujet
+    Slowmode: Mode Ralenti
+    NSFW: NSFW
+    ChannelCreated: Salon Créé
+    ChannelDeleted: Salon Supprimé
+    ChannelPinsUpdated:  Messages épinglés de Salon Actualisés
+    ChannelUpdated:  Salon Actualisé
+    ChannelID: ID du Salon
+    ChannelType: Type du Salon
+    Pins: Messages épinglés
+    EmojiCreated: Émoji Créé
+    EmojiDeleted: Émoji Supprimé
+    EmojiUpdated: Émoji Actualisé
+    Animated: Animé
+    GuildUpdated: Serveur Actualisé
+    Banned: a été banni du serveur
+    Unbanned: a été débanni du serveur
+    Joined: a rejoint le serveur
+    Left: a quitté le serveur
+    AccountCreatedAt: Compte créé le
+    AccountAge: Age du Compte
+    MessageCreated: Message Créé
+    MessageDeleted: Message Supprimé
+    MessageEdited: Message Édité
+    ReactionAdded: Réaction Ajouté
+    MessageContent: Contenu du Message
+    MessageID: ID du Message
+    MessageLink: Lien du Message
+    MessageAuthor: Auteur du Message
+    ReactionRemovedAll: Toutes les Réactions ont été supprimées
+    ReactionRemoved: Réaction Supprimée
+    RoleCreated: Rôle Créé
+    RoleDeleted: Rôle Supprimé
+    RoleUpdated: Rôle Actualisé
+    RoleAdded: Rôle Ajouté
+    RoleRemoved: Rôle Supprimé
+    RoleID: ID du rôle
+    AddedPermissions: Permissions Ajoutées
+    RemovedPermissions: Permissions Supprimées
+    TypingStarted: a commencé a écrire
+    TypingStopped: a arrêté d'écrire
+    TheUser: L'utilisateur
+    ChangedNote: a changé de note
+    ChangedUsername: a changé de nom d'utilisateur
+    Note: Note
+    Username: Nom d'utilisateur
+    WasUpdated: a été Actualisé
+    NewDisplayName: Nouveau Nom d'affichage
+    PresenceUpdated: La présence de {User} a été actualisée
+    OldPresence: Ancienne Présence
+    NewPresence: Nouvelle Présence
+  InvalidStatus: Status invalide (ON/OFF)
+  InvalidLinkOrFile: Lien ou Fichier invalide
+  InvalidNumber: Nombre invalide (Entre 0 et 25)
+  Example: Exemple
+  EmbedGenerator:
+    GetMessageEnabled: Veuillez écrire le status du `Message (ON/OFF)`
+    GetMessage: Veuillez écrire le `Message`
+    GetTitleEnabled: Veuillez écrire le status du `Titre (ON/OFF)`
+    GetTitle: Veuillez écrire le `Titre`
+    GetDescriptionEnabled: Veuillez écrire le status de la `Description (ON/OFF)`
+    GetDescription: Veuillez écrire la `Description`
+    GetColor: Veuillez écrire la `Couleur`
+    GetAuthorEnabled: Veuillez écrire le status de l'`Auteur (ON/OFF)`
+    GetAuthorText: Veuillez écrire l'`Auteur`
+    GetAuthorIconEnabled: Veuillez écrire le status de l'`Icone de l'Auteur (ON/OFF)`
+    GetAuthorIcon: Veuillez écrire le lien de l'`Icone de l'Auteur`
+    GetFieldsNumber: Veuillez écrire le nombre de `Fields`
+    GetFieldsName: Veuillez écrire le `Nom du Field` n°
+    GetFieldsValue: Veuillez écrire la `Valeur du Field` n°
+    GetFieldsInline: Veuillez écrire le `Inline du Field` n°
+    GetTimestampEnabled: Veuillez écrire le status du `Timestamp (ON/OFF)`
+    GetThumbnailEnabled: Veuillez écrire le status du `Thumbnail (ON/OFF)`
+    GetThumbnailURL: Veuillez écrire le lien du `Thumbnail`
+    GetImageEnabled: Veuillez écrire le status de l'`Image (ON/OFF)`
+    GetImageURL: Veuillez écrire le lien de l'`Image`
+    GetFooterEnabled: Veuillez écrire le status du `Footer (ON/OFF)`
+    GetFooterText: Veuillez écrire le `Footer`
+    GetFooterIconEnabled: Veuillez écrire le status de l'`Icone du Footer (ON/OFF)`
+    GetFooterIcon: Veuillez écrire le lien de l'`Icone du Footer`
+    GetTitleLinkEnabled: Veuillez écrire le status du `Lien du Titre (ON/OFF)`
+    GetTitleLinkURL: Veuillez écrire le `Lien du Titre`
+  LinkNotAllowed: Ce lien n'est pas autorisé
+  LinkSimilarToDiscord: Ce lien ressemble trop au site Officiel Discord
+  Badword: Gros-mot
+  Warn: Avertissement
+  TextChannel: Textuel
+  VoiceChannel: Vocal
+  CategoryChannel: Catégorie
+  Yes: Oui
+  No: Non
+  CustomVoiceChannels: Salons Vocaux Personnalisés
+  CustomVoiceChannelsCreated: Système de `Salons Vocaux Personnalisés` **créé**
+  CustomVoiceChannelsAlreadyCreated: Le système de `Salons Vocaux Personnalisés` a **déjà été créé**
+  Close: Fermer
+  RoleTooHigh: |-
+    Je ne peux pas donner le Rôle choisi car ce Rôle est au dessus du mien.
+    Pour modifier cela, vous devez vous rendre dans les Paramètres > Rôles, et glisser mon rôle au dessus du Rôle choisi
+  XPSystem: Système d'XP
+  BotLatency: Latence du Bot
+  APILatency: Latence de l'API
+
+
+
+
+
+
+en:
+  Language: en
+  ErrorPreventer: An error has occurred
+  ErrorPreventerReportSent: A report has been sent
+  UserErrorNoPermissions: You don't have permission to do this
+  MeErrorNoPermissions: I don't have permission to do this
+  MeErrorInsufficientPermissions: I don't have sufficient permissions to do this
+  UnavailableMPCommand: This Command is not available in Private Messages
+  UserError:
+    InvalidSyntax: Invalid syntax {0} {1} {2} {3} {4}
+    SpecifyUser: Please specify a user
+    SpecifyID: Please specify an ID
+    SpecifyUserID: Please specify a User ID
+    SpecifyChannelID: Please specify a Channel ID
+    SpecifyServerID: Please specify a Server ID
+    SpecifyReason: Please specify a reason
+    SpecifyColor: Please specify a color
+    SpecifyTitle: Please specify a title
+    SpecifyMessage: Please specify a message
+    SpecifyName: Please specify a name
+    SpecifyTitleOrMessage: Please specify a title or message
+    SpecifyValidStatus: Please specify a valid status (Online, Idle, DND, Offline)
+    SpecifyWish: Please specify a wish
+    SpecifyMention: Please specify the mention
+    SpecifyNumber: Please specify a number
+    SpecifyLanguage: Please specify the language {0}
+    SpecifyNumberGreaterThan0: Please specify a number greater than 0
+    InvalidMention: Invalid mention
+    UnknownRole: Unknown role
+    SpecifyDuration: Please specify a duration (eg 1h, 3d, 2w, def)
+    SpecifyDurationRedeemPremium: Please specify a duration (2m, 6m, 12m, lifetime)
+    InvalidNumber: Invalid number
+    SpecifyRules: Please specify rules
+    SpecifyONOFF: Please set this on ON/OFF
+    SpecifyVariableXP: Please specify a variable (Level/Messages)
+    SpecifyTest: Please specify a test
+    SpecifyWebhookURL: Please specify the webhook link
+    SpecifyLink: Please specify a link
+    SpecifyQuestion: Please specify a question
+    SpecifyMessageID: Please specify message ID
+    PollSpecifyAction: Please specify an action (start, stop)
+    SpecifyMessagePollID: Please specify the Message ID of the Poll
+    SpecifyCode: Please specify Code
+    ReplyMessage: Please reply to a messsage
+    SpecifyBadword: Please specify a Badword
+    SpecifyPrefix: Please specify a prefix
+    SpecifyChannelFirst: You must first define the channel
+    SpecifyText: Please specify text
+    SpecifyEmoji: Please specify an emoji
+    InvalidLanguage: Invalid language (fr, en, us)
+    StatusSpecifyNameIfActionSpecified: Please specify an Action if you have specified an Action Type
+    SpecifyTextChannel: Please specify a Text Channel
+  Error:
+    SpecifyValidUser: Please specify a valid user
+    SpecifyValidDuration: Please specify a valid period (eg 1h, 3d, 2w, def)
+    SpecifyValidDate: Please specify a valid date
+    SpecifyValidRole: Please specify a valid role
+    SpecifyValidEmoji: Please specify a valid emoji
+    SpecifyValidWebhookURL: Please specify a valid WebHook link
+    SpecifyValidChannelID: Please specify a valid channel ID
+    SpecifyValidLanguage: Please specify a valid language {0}
+    SpecifyValidID: Please specify a valid ID
+    UnknownModuleCategory: This module or category is not recognized
+    NoPermissionsToBan: I do not have sufficient permissions for Ban this user
+    UnableToBan: Unable to ban this user
+    UnableToDeleteThisNumberOfMessages: Can not delete this number of messages
+    UnableToKick: Unable to kick this user
+    NoPermissionsToKick: I do not have sufficient permissions for kick this user
+    YouAreAlone: "You are alone \U0001F613"
+    EmptyRules: Rules list is empty
+    NoUserIsBanned: No user is banned
+    ThisUserIsNotBanned: This user is not banned
+    ThisUserIsNotMuted: This user is not muted
+    UnableToTranslate: Impossible to translate
+    XPSystemIsDisabled: The XP system is disabled on this server
+    UnableToBlacklistBotsOwner: Unable to blacklist the owner of the bot
+    UserAlreadyBlacklisted: This user is already blacklisted
+    UserNotBlacklisted: This user is not blacklisted
+    NoFileWasSended: No files have been sent
+    SpecifyValidLink: Please specify a valid link
+    UnknownBlockedLink: This link is not blocked
+    SpecifyDurationBetween0and21600: Please specify a delay between 0 and 21600 seconds
+    UnableDeleteMessages: Unable to delete more than {0} messages
+    UnableDeleteOldMessages: Unable to delete messages older than 14 days old
+    UnableDelete0Messages: Unable to delete 0 message
+    SpecifyDurationBetween: Please specify a duration between {0} and {1} seconds
+    SpecifyNumberBetween: Please specify a number between {0} and {1}
+    ClearlagError: Unable to Clearlag this number of messages
+    PollSpecifyValidAction: Please specify a valid action (start, stop)
+    XPSystemAlready: XP System is already {0}
+    BadwordsSystemAlready: Badwords System is already {0}
+    InvalidPoll: This message is not a valid poll
+    ReplyMessage: Please reply to a messsage
+    UnableSendMessageAsked: Unable to send the requested message
+    UserBlockedMe: The User blocked me 
+    YouBlockedMe: You blocked me 😓
+    CantRespondYou: I can't answer you in
+    UnableToDeleteMessage: Unable to delete this message
+    BadwordNotExist: This Badword is not in the list
+    BadwordAlreadyExist: This Badword is already in the list
+    NotEnoughtCoins: You **don't have enough coins**. You can get some by __Inviting other Users__
+    AlreadyPremium: This server have **Already Premium Perks**
+    AlreadyOn: The {0} is **already** on **{1}**
+    NotNSFW: This channel is not NSFW 😏
+    NotAllowed: You are not allowed to use this command
+    MemberNotFound: Member not found
+    Error: An error has occurred
+    AutoroleRoleNotSet: You need to set a Role to give with /autorole setrole
+    RoleNotFound: This Role is not in the list
+    RoleAlreadyInList: This Role is already in the list
+    UserNotWaitingReply: This User is not waiting for a Reply
+    NoOperationInProgress: No operation is in progress
+    /login: Please Log In using /login
+    EmailAlreadyTaken: This Email is already taken
+    AlreadyReserved: 
+      You already reserved for this day.
+      To Unreserve, type /déréserver
+    InvalidReservation: Invalid Reservation
+  Success:
+    # RulesWasSended: Rules has been sent to you in private messages
+    RulesWasSended: Rules has been successfully sent
+    DownloadSuccess: "**{0}** Downloaded successfully"
+    SentSuccess: Successfully sent
+    DeletedMessage: Message successfully deleted
+    Deleted: Successfully deleted
+    ChangedStatus: The Status has been successfully changed to **{0}**
+    ChangedRole: The Role has been successfully changed to **{0}**
+    AutoroleAddedRole: The Role {0} has been added to Autorole
+    AutoroleRemovedRole: The Role {0} has been removed from Autorole
+    ReactionroleAddedRole: You received Role {0}
+    ReactionroleRemovedRole: You have lost Role {0}
+  Permissions:
+    ADMINISTRATOR: Administrator
+    BAN_MEMBERS: Ban Members
+    KICK_MEMBERS: Kick Members
+    MANAGE_MESSAGES: Manage Messages
+    MANAGE_CHANNELS: Manage Channels
+    MANAGE_ROLES: Manage Roles
+    CHANGE_NICKNAME: Change Nickname
+    MANAGE_NICKNAMES: Manage Nicknames
+  NewLanguage: New Language
+  NewPrefix: New Prefix
+  HelpPage:
+    Title: Help Page
+    Description: |-
+      <argument> Obligatory argument
+      (<argument>) Optional argument
+      [<argument>] Necessary argument for optionals
+    Categories:
+      Default: Basic or necessary Commands
+      Moderation: Moderation & Control Commands
+      Utility: Additional and Useful Commands
+      Fun: Fun Commands
+      Custom: Custom Commands
+  InviteLink: Here is my invitation link
+  BanDescription: A user has been banned from the server
+  KickDescription: A user has been kick from the server
+  MuteDescription: A user has been muted
+  UnmuteDescription: A user has been unmuted
+  ReportDescription: A user has been reported
+  WarnDescription: A user has been warned
+  Moderator: Moderator
+  Member: Member
+  Reason: Reason
+  Duration: Duration
+  Reporter: Reporter
+  WarnedMember: Warned member
+  Announcement: Announcement
+  ChannelLockedFor: This channel has been locked for
+  ChannelUnlockedFor: This channel has been unlocked for
+  AutoUnmuteAfter: Unmute automatic after
+  UserAutoUnmuteAfter: A user was automatically unmuted after
+  UnmuteMSG1: You were unmuted
+  UnmuteMSG2: automatically after
+  ActualPrefix: The current prefix is
+  Ads: Advertising
+  Roll1: ''
+  Roll2: sided dice
+  Rules: Rules
+  RulesUpdate: Rules Updated
+  RulesUpdated: The regulation has been updated
+  RulesDelete: Rules Deleted
+  RulesDeleted: The server rules has been deleted
+  RulesSyntaxUser: Sends the rules of the server
+  RulesSyntaxSend: Send the server rules in the current channel
+  RulesSyntaxSet: Define the rules
+  RulesSyntaxDelete: Removes the current rules
+  By: by
+  Deleted: deleted
+  sPrefixChanged: The prefix has been changed to
+  sPrefixUpdate: Prefix Updated
+  sJoinMessageChanged: The Join-Message has been put on
+  sJoinMessageUpdate: Join-Message Updated
+  sJoinMessageChannelChanged: The Join-Message channel has been changed on
+  sLeaveMessageChanged: The Leave-Message has been put on
+  sLeaveMessageUpdate: Leave-Message Updated
+  sLeaveMessageChannelChanged: The Leave-Message channel has been changed on
+  sAutoReactChanged: The Auto-react was put on
+  sAutoReactUpdate: Auto-React Updated
+  sSyntaxHelp: Displays this page
+  sSyntaxInfo: List the list of parameters and values
+  sSyntaxPrefix: Change the prefix
+  sSyntaxJoinMessage: Configure the Join-Message
+  sSyntaxLeaveMessage: Configure the Leave-Message
+  sSyntaxAutoReact: Allows the bot to react to the messages containing keywords
+  sJoinMessageSyntaxHelp: Displays this page
+  sJoinMessageSyntaxOnOff: Enables/disables the join-message
+  sJoinMessageSyntaxSetChannel: Set the channel where the join-message will be sent
+  sLeaveMessageSyntaxHelp: Displays this page
+  sLeaveMessageSyntaxOnOff: Enables/disables the Leave-Message
+  sLeaveMessageSyntaxSetChannel: Set the channel where the Leave-message will be sent
+  ServerName: Server name
+  CreatedAt: Created at
+  TotalMembers: Total members
+  Time: Time
+  Unspecified: Unspecified
+  To: to
+  warnsSyntaxHelp: Displays this page
+  warnsSyntaxUser: Displays the Warns of a Member
+  warnsSyntaxAdd: Adds Warns to a Member
+  warnsSyntaxRemove: Remove Warns from a Member
+  warnsSyntaxClear: Deletes the Warns of a Member
+  warnsSyntaxClearall: Deletes all Warns
+  AllWarnsWas: All Warns have been
+  CurrentlyHas: currently has
+  AllWarnsOf: All Warns of
+  WasDeleted: have been **deleted**
+  WarnsOf: Warns of
+  WasUpdatedFrom: have been updated from
+  WarnsClearAllConfirm: Are you sure to delete all Warns from all members of the server ?
+  Confirm: Confirm
+  Confirmed: Confirmed
+  LogsSyntaxHelp: Displays this page
+  LogsSyntaxList: Displays the list of log modules
+  LogsSyntaxChannel: Set the Logs channel
+  LogsSyntaxOnOff: Enables/disables a module or category of logs
+  AllModulesUpdated: All modules have been put on
+  TheCategory: The category
+  TheModule: The Module
+  WasTurned: was put on
+  LogsChannelUpdated: The logs channel has been changed
+  XPSystemTurned: The XP system has been changed on
+  XPResetedBy: All the XP of the server was reset by
+  XPOf: XP of
+  AllXP: All XP
+  WasResetedBy: has been reset by
+  XPSyntaxUser: Allows you to see a user's XP
+  XPSyntaxOnOff: Enables/disables the XP system
+  XPSyntaxSet: Modifies a user's XP
+  XPSyntaxReset: Resets the XP of a user
+  XPSyntaxResetall: Resets the XP of all users
+  OwnerSyntaxEnableDisable: Enables/disables the bot
+  AddedToBlacklist: has been added to Blacklist
+  RemovedFromBlacklist: has been removed from Blacklist
+  OwnerBlacklistSyntaxList: List BlackListed Users
+  OwnerBlacklistSyntaxAdd: Add a user to blacklist
+  OwnerBlacklistSyntaxRemove: Deletes a user from the Blacklist
+  AdminRoleRetrived: You got Admin Role on
+  UnableToSendDM: Can not send a private message to
+  WithSuccess: with success
+  MessageSentTo: Message sent to
+  ErrorSpecifyValidUser: 'Error: Please specify a valid user'
+  AdminPermsUpdated: Admin Perms modified successfully !!!
+  BetaUpdated: Beta version modified successfully !!!(Restart required)
+  WebhookUpdated: Modification of the logs webhook done !!!
+  WaitCommandCooldown: Please wait 3 seconds between each Commands
+  WaitFeedback: Please wait {delay} minutes before sending another Feedback
+  WaitReportBug: Please wait {delay} minutes before sending another Bug Report
+  Blacklisted: |-
+    Whoops!!! It looks like you have been blacklisted, so you can not use my commands.
+    If you think it's a mistake, contacts my developer.
+  NeedAdminPerms: |-
+    I do not have administrator's permissions
+    To take advantage of the features, please activate them
+  Mentionned: Yes it's me ? For information my prefix is
+  TimeElapsed: Time elapsed
+  Canceled: Canceled
+  WriteFeedback: Please write your message to send
+  SupportDescription: For any question or request, go to the [Support server](https://discord.gg/vWDzFa6dFN)
+  MostAskedQuestions: The most asked questions
+  Feedback: Feedback
+  Contact: Contact
+  FaqSuggest: You can suggest any questions on the [Support server](https://discord.gg/vWDzFa6dFN)
+    or by using
+  FAQ:
+    What are the available features ?: To see this, you can type the command `${prefix}help`
+  ContactDescription: You can send a `${prefix}feedback` or contact us by **AZERTY#9999**
+  ClearedUntil: Deleted **${messages}** messages until `${LastMessageContent}`
+  DeletedMessages: Deleted **${messages}** messages
+  PollEnded: "\U0001F512 The poll has ended"
+  EmbedClock: CLOCK
+  DidYouMean: Did you mean
+  Name: Name
+  Version: Version
+  UpdatedAt: Updated at
+  Creator: Creator
+  ID: ID
+  MemberCount: Member Count
+  Owner: Owner
+  Type: Type
+  Mention: Mention
+  Color: Couleur
+  Users: Users
+  Years: years
+  Months: months
+  Days: days
+  Hours: hours
+  Minutes: minutes
+  Seconds: seconds
+  Username: Username
+  AccountCreatedAt: Account Created At
+  AccountAge: Account Age
+  Content: Content
+  Author: Author
+  ChannelTitle: CHANNEL
+  GuildTitle: GUILD
+  RoleTitle: ROLE
+  MessageTitle: MESSAGE
+  Desktop: Desktop
+  Web: Web
+  Mobile: Mobile
+  None: None
+  UserPresence: User Presence
+  MemberPresence: Member Presence
+  NoPresence: 
+    Sorry, currently Discord can't provide data.
+    Try again later
+  Hashtag: Hashtag
+  Flags: Flags
+  Avatar: Avatar
+  Game: Game
+  LinkToAvatar: Link To Avatar
+  User: User
+  HighestRole: Highest Role
+  JoinedAt: Joined At
+  DisplayRole: Display Role
+  Roles: Roles
+  Emojis: Emojis
+  Channels: Channels
+  Ago: ${TimeAgo} ago
+  Status: Status
+  Presence: Presence
+  Activity: Activity
+  Message: Message
+  In: in
+  Of: of
+  Logs:
+    Name: Name
+    DisplayName: Display Name
+    UserID: User ID
+    ID: ID
+    Content: Content
+    Permissions: Permissions
+    Role: Role
+    Old: Old
+    New: New
+    Channel: Channel
+    Emoji: Emoji
+    Topic: Topic
+    Slowmode: Slowmode
+    NSFW: NSFW
+    ChannelCreated: Channel Created
+    ChannelDeleted: Channel Deleted
+    ChannelPinsUpdated:  Channel Pins Updated
+    ChannelUpdated: Channel Updated
+    ChannelID: Channel ID
+    ChannelType: Channel Type
+    Pins: Pins
+    EmojiCreated: Emoji Created
+    EmojiDeleted: Emoji Deleted
+    EmojiUpdated: Emoji Updated
+    Animated: Animated
+    GuildUpdated: Guild Updated
+    Banned: was banned
+    Unbanned: was unbanned
+    Joined: joined the server
+    Left: left the server
+    AccountCreatedAt: Account Created At
+    AccountAge: Account Age
+    MessageCreated: Message Created
+    MessageDeleted: Message Deleted
+    MessageEdited: Message Edited
+    ReactionAdded: Reaction Added
+    MessageContent: Message Content
+    MessageID: Message ID
+    MessageLink: Message Link
+    MessageAuthor: Message Author
+    ReactionRemovedAll: Reactions Removed All
+    ReactionRemoved: Reaction Removed
+    RoleCreated: Role Created
+    RoleDeleted: Role Deleted
+    RoleUpdated: Role Updated
+    RoleAdded: Role Added
+    RoleRemoved: Role Removed
+    RoleID: Role ID
+    AddedPermissions: Added Permissions
+    RemovedPermissions: Removed Permissions
+    TypingStarted: started typing
+    TypingStopped: stopped typing
+    TheUser: The User
+    ChangedNote: Changed Note
+    ChangedUsername: Changed Username
+    Note: Note
+    Username: Username
+    WasUpdated: Was Updated
+    NewDisplayName: New Display Name
+    PresenceUpdated: Presence of {User} was updated
+    OldPresence: Old Presence
+    NewPresence: New Presence
+  InvalidStatus: Invalid Status (ON/OFF)
+  InvalidLinkOrFile: Invalid Link or File
+  InvalidNumber: Invalid number (Between 0 and 25)
+  Example: Example
+  EmbedGenerator:
+    GetMessageEnabled: Please write the status of the `Message (ON/OFF)`
+    GetMessage: Please write the `Message`
+    GetTitleEnabled: Please write the status of the `Title (ON/OFF)`
+    GetTitle: Please write the `Titre`
+    GetDescriptionEnabled: Please write the status of the `Description (ON/OFF)`
+    GetDescription: Please write the `Description`
+    GetColor: Please write the `Color`
+    GetAuthorEnabled: Please write the status of the `Author (ON/OFF)`
+    GetAuthorText: Please write the `Author`
+    GetAuthorIconEnabled: Please write the status of the `Author's Icon (ON/OFF)`
+    GetAuthorIcon: Please write the Link of the `Author's Icon`
+    GetFieldsNumber: Please write the Number of `Fields`
+    GetFieldsName: Please write the `Field's Name` n°
+    GetFieldsValue: Please write the `Field's Value` n°
+    GetFieldsInline: Please write the `Field's Inline` n°
+    GetTimestampEnabled: Please write the status of the `Timestamp (ON/OFF)`
+    GetThumbnailEnabled: Please write the status of the `Thumbnail (ON/OFF)`
+    GetThumbnailURL: Please write the Link of the `Thumbnail`
+    GetImageEnabled: Please write the status of the `Image (ON/OFF)`
+    GetImageURL: Please write the Link of the `Image`
+    GetFooterEnabled: Please write the status of the `Footer (ON/OFF)`
+    GetFooterText: Please write the `Footer`
+    GetFooterIconEnabled: Please write the status of the `Footer's Icon (ON/OFF)`
+    GetFooterIcon: Please write the Link of the `Icone du Footer`
+    GetTitleLinkEnabled: Please write the status of the `Title's Link (ON/OFF)`
+    GetTitleLinkURL: Please write the `Title's Link`
+  LinkNotAllowed: This link is not allowed
+  LinkSimilarToDiscord: This link looks too much like the Official Discord website
+  Badword: Badword
+  Warn: Warn
+  TextChannel: Text
+  VoiceChannel: Voice
+  CategoryChannel: Catégory
+  Yes: Yes
+  No: No
+  CustomVoiceChannels: Custom Voice Channels
+  CustomVoiceChannelsCreated: The `Custom Voice Channels` System **created**
+  CustomVoiceChannelsAlreadyCreated: The `Custom Voice Channels` System has **already been created**
+  Close: Close
+  RoleTooHigh: |-
+    I cannot give the chosen Role because this Role is above mine.
+    To change this, you need to go to Settings > Roles, and drag my role above the chosen Role
+  XPSystem: XP System 
+  BotLatency: Bot Latency
+  APILatency: API Latency

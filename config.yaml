@@ -1,0 +1,60 @@
+# ©2022 AZERTY. All rights Reserved | AZERTY#9999
+
+# Bot Token
+token: MTAxNTYxMjA4NDM3OTIwMTYzNw.G5DL9t.NaxXW7rZQIe-hDuw-Jta-akiNPaMTGtxDxq2xY
+
+### OWNERSHIPS ###
+OwnerID: "452454205056352266"
+OwnerName: "AZERTY#9999"
+CreatorID: "452454205056352266"
+CreatorName: "AZERTY#9999"
+
+# Bot Propreties
+BotInfo:
+  name: Réservateur de Restaurant
+  version: "1.0"
+  ID: '1015612084379201637'
+  CreatedAt: 3 September 2022
+  UpdatedAt: 8 September 2022
+  IconURL: https://imgur.com/sTLlBT1.png
+  # IconURL: https://imgur.com/sJje5K0.png
+
+# MongoDB Access Link
+MongoDB: mongodb+srv://AZERTY44:Yoptoutlemonde442005@arhsrbot.0arnvs8.mongodb.net/ArhsrBot?retryWrites=true&w=majority
+
+# Host Dashboard's Link
+host: https://dashboard.heroku.com/apps/template-bot44/
+
+# Link to the Discord Webhook to Log activity
+WebhookLogsURL: https://discord.com/api/webhooks/1015655904160518194/x_izS5J-dCIMCS34SzMQGr5QUFAQxJMTTN7xVCoBBa5QjJpa7hnAgooVRzviSyrQMj7-
+
+# Id of Discord Channel to send User Messages & Questions
+ChatBotChannelID: 1015931233865318453
+
+# Default Language. Options: en, fr
+DefaultLanguage: fr
+
+# Enable or Disable Discord.js v13 Features
+v13: true
+SlashCommands: true
+ContextMenus: true
+
+# ⚠ ContextMenus are considered as SlashCommands ⚠
+
+# If the bot create Global or Guild Slash Commands
+# Options: global, guild, auto
+SlashCommandsTypes: guild
+# If SlashCommandsTypes is not on "global", specify the Guild ID for Slash Commands
+SlashCommandsGuildsID:
+  - "525370590413062144" # AzerStudio
+  - "1015689607955873842"
+
+# off, global, guild, auto
+SlashCommandsWhitelistMode: off
+# Whitelisted SlashCommands (ContextMenus included)
+SlashCommandsWhitelist: 
+  - presence
+
+# How much seconds users have to wait between each Feedbacks & ReportBug
+Feedback_Cooldown: 300
+ReportBug_Cooldown: 300

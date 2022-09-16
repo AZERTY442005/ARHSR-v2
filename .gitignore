@@ -1,0 +1,5 @@
+node_modules/
+.lh/
+DataBase/uptime.txt
+DataBase/starts.csv
+.vscode/launch.json

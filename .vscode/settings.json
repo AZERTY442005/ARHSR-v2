@@ -1,0 +1,240 @@
+{
+    "git.ignoreLimitWarning": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": true,
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true,
+        "source.sortMembers": true
+    },
+    "editor.formatOnSave": false,
+    "timeline.showView": true,
+    "local-history.browser.descending": true,
+
+
+    "editor.bracketPairColorization.enabled": false,
+    "editor.guides.bracketPairs": false,
+    "bracket-pair-colorizer-2.colors": [
+        "Gold",
+        // "#8B949E", // Gray
+        "#E64043", // Red
+        "#00A6CC", // Blue
+        // "#1FA08C", // Turquoise
+        // "LightSkyBlue",
+        "#389C58", // Green
+        "#CCCCCC", // Gray v2
+        // "#E82838", // Red v2 (more)
+        "Orchid", // Purple
+    ],
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    "bracket-pair-colorizer-2.showBracketsInRuler": true, // ???
+    // "bracket-pair-colorizer-2.rulerPosition": "Center",
+    "bracket-pair-colorizer-2.showVerticalScopeLine": true,
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": true,
+    "bracket-pair-colorizer-2.scopeLineRelativePosition": true,
+    "bracket-pair-colorizer-2.colorMode": "Consecutive",
+    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+
+
+
+    // TODO Highlight
+    "todohighlight.isEnable": true,
+    // "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        // "DEBUG:",
+        // "REVIEW:",
+        // {
+        //     "text": "NOTE:",
+        //     "color": "#ff0000",
+        //     // "backgroundColor": "yellow",
+        //     "backgroundColor": "#F1C426",
+        //     "overviewRulerColor": "grey"
+        // },
+        // {
+        //     "text": "HACK:",
+        //     "color": "#000",
+        //     "isWholeLine": false,
+        // },
+        {
+            "text": "send",
+            "color": "aqua",
+            "border": "1px solid aqua",
+            "backgroundColor": "rgba(0,0,0,.2)",
+            "isWholeLine": false,
+        },
+        {
+            "text": "reply",
+            "color": "aqua",
+            "border": "1px solid aqua",
+            "backgroundColor": "rgba(0,0,0,.2)",
+            "isWholeLine": false,
+        },
+        {
+            "text": "bot",
+            "color": "orange",
+            "border": "1px solid orange",
+            "backgroundColor": "rgba(0,0,0,.2)",
+            "isWholeLine": false,
+        },
+        // {
+        //     "text": "args",
+        //     // "color": "#00F200",
+        //     "color": "#66F766",
+        //     // "border": "0px solid #00F200",
+        //     "border": "0px solid #66F766",
+        //     // "backgroundColor": "rgba(0,0,0,.2)",
+        //     "backgroundColor": "rgba(0,0,0,.0)",
+        //     "isWholeLine": false,
+        // },
+        {
+            // "text": "console",
+            // // "color": "#00F200",
+            // "color": "#66F766",
+            // // "border": "0px solid #00F200",
+            // "border": "0px solid #66F766",
+            // // "backgroundColor": "rgba(0,0,0,.2)",
+            // "backgroundColor": "rgba(0,0,0,.0)",
+            // "isWholeLine": false,
+
+            "text": "console",
+            "color": "#66F766",
+            "border": "1px solid #66F766",
+            "backgroundColor": "rgba(0,0,0,.2)",
+            "isWholeLine": false,
+        },
+        // {
+        //     "text": "message",
+        //     // "color": "magenta",
+        //     // "color": "#FF00F3",
+        //     "color": "#FFA2FA",
+        //     // "border": "0px solid magenta",
+        //     // "border": "0px solid #FF00F3",
+        //     "border": "0px solid #FFA2FA",
+        //     // "backgroundColor": "rgba(0,0,0,.2)",
+        //     "backgroundColor": "rgba(0,0,0,.0)",
+        //     "isWholeLine": false,
+        // },
+        {
+            "text": "// ERROR",
+            "color": "red",
+            "border": "1px solid red",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            // "BorderOpacity": "0.1"
+            // "opacity": "0.1"
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "return //",
+            "color": "red",
+            "border": "1px solid red",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            // "BorderOpacity": "0.1",
+            // "opacity": "0.5"
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "// OK",
+            "color": "gold",
+            "border": "1px solid gold",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "// TAG",
+            "color": "#66F766",
+            "border": "1px solid #66F766",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "// BETA",
+            "color": "magenta",
+            "border": "1px solid magenta",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "// TEMP",
+            "color": "magenta",
+            "border": "1px solid magenta",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.2)",
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "async execute",
+            "color": "orange",
+            "border": "1px solid orange",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0,0,0,.1)",
+            "isWholeLine": false,
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "module.exports",
+            "color": "orange",
+            "border": "1px solid orange",
+            "backgroundColor": "rgba(0,0,0,.1)",
+            "isWholeLine": false,
+        },
+        {
+            "text": "config",
+            "color": "yellow",
+            "border": "1px solid yellow",
+            "backgroundColor": "rgba(0,0,0,.1)",
+            "isWholeLine": false,
+        },
+    ],
+    "todohighlight.defaultStyle": {
+        "color": "red",
+        "backgroundColor": "#ffab00",
+        "overviewRulerColor": "#ffab00",
+        "cursor": "pointer",
+        "border": "1px solid #eee",
+        "borderRadius": "2px",
+        "isWholeLine": true,
+        //other styling properties goes here ... 
+    },
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+    ],
+    "todohighlight.exclude": [
+        "**/*.yaml",
+        "**/*.yml",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.lh/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**",
+    ],
+    "todohighlight.maxFilesForSearch": 5120,
+    "todohighlight.toggleURI": false,
+    "rpc.enabled": true,
+    "discord-chat.token": "NDUyNDU0MjA1MDU2MzUyMjY2.YVdObQ.KYggkilfyWQnx0DNThSzmrI8_3g",
+    "discord.enabled": true
+}
