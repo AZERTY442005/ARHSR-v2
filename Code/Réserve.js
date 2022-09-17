@@ -1,10 +1,10 @@
 // ©2022 AZERTY. All rights Reserved | AZERTY#9999
 
-const fs = require("fs")
+// const fs = require("fs")
 var figlet = require("figlet")
 const lolcatjs = require("lolcatjs")
 const chalk = require("chalk")
-const inquirer = require("inquirer")
+// const inquirer = require("inquirer")
 
 function Banner() {
     var banner = figlet.textSync("Réservateur Automatique", {
@@ -48,6 +48,7 @@ async function Reserve(login, password, restaurant) {
 
         console.clear()
         Banner()
+        console.log(chalk.cyanBright("Réservation en cours. Veuillez patienter ..."))
 
         // let driver = new webdriver.Builder()
         let browser = driver
@@ -73,7 +74,7 @@ async function Reserve(login, password, restaurant) {
         const LoginFailed = await browser.findElement(webdriver.By.xpath("//*[@id='login__panel-signin']/div[2]")).catch(()=>{})
         if(LoginFailed) {
             browser.close()
-            return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe n'existent pas dans notre base de données.", delay: StopTimer(StartTimespan)}
+            return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe doivent être incorrectes.", delay: StopTimer(StartTimespan)}
         }
         // console.log("Logged In")
         await browser.findElement(webdriver.By.xpath("//div[text()='Réservation']")).click()

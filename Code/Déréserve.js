@@ -1,4 +1,21 @@
 // ©2022 AZERTY. All rights Reserved | AZERTY#9999
+
+// const fs = require("fs")
+var figlet = require("figlet")
+const lolcatjs = require("lolcatjs")
+const chalk = require("chalk")
+// const inquirer = require("inquirer")
+
+function Banner() {
+    var banner = figlet.textSync("Réservateur Automatique", {
+        font: "Small",
+        horizontalLayout: "default",
+        width: 1000,
+        whitespaceBreak: true,
+    })
+    lolcatjs.fromString(banner)
+}
+
 function StopTimer(StartTimespan) {
     const EndTimespan = new Date()
     var Delay =(EndTimespan.getTime() - StartTimespan.getTime()) / 1000
@@ -7,7 +24,7 @@ function StopTimer(StartTimespan) {
 
 async function Dereserve(login, password) {
     for(let i = 0; i < 1; i++) {
-        console.log("Starting")
+        // console.log("Starting")
 
         StartTimespan = new Date()
     
@@ -22,6 +39,10 @@ async function Dereserve(login, password) {
         .forBrowser("chrome")
         .setChromeOptions("./chromedriver.exedsq")
         .build()
+        
+        console.clear()
+        Banner()
+        console.log(chalk.cyanBright("Déréservation en cours. Veuillez patienter ..."))
     
         // console.log(webdriver)
         // console.log(browser)
@@ -39,7 +60,7 @@ async function Dereserve(login, password) {
         const LoginFailed = await browser.findElement(webdriver.By.xpath("//*[@id='login__panel-signin']/div[2]")).catch(()=>{})
         if(LoginFailed) {
             browser.close()
-            return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe n'existent pas dans notre base de données.", delay: StopTimer(StartTimespan)}
+            return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe doivent être incorrectes.", delay: StopTimer(StartTimespan)}
         }
         await browser.findElement(webdriver.By.xpath("//div[text()='Réservation']")).click()
         let CancelButton
@@ -47,7 +68,7 @@ async function Dereserve(login, password) {
             CancelButton = await browser.findElement(webdriver.By.xpath("//*[@id='styleguides']/div[3]/div/div/div/div[2]/div/div/table/tbody/tr/td[2]/a"))
         } catch (err) {
             await browser.close()
-            return {status: "Error", output: "Aucune réservation", delay: StopTimer(StartTimespan)}
+            return {status: "Error", output: "Aucune réservation.", delay: StopTimer(StartTimespan)}
         }
         
         // console.log(CancelButton)
