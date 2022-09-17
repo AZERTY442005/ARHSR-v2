@@ -1,6 +1,7 @@
 # Réservation Automatique - ARHSR v2
 
 Réserve automatiquement* le Restaurant souhaité par un menu
+<br/>
 La Première version consistant à utiliser un Robot automatisé par Discord est en pause
 
 *Nécessite que l'ordinateur hôte soit allumé lors d'une Réservation programmée
