@@ -6,7 +6,11 @@
     "license": "MIT",
     "dependencies": {
         "chromedriver": "^105.0.0",
-        "selenium-webdriver": "^4.4.0"
+        "selenium-webdriver": "^4.4.0",
+        "figlet": "^1.5.2",
+        "fs": "^0.0.1-security",
+        "inquirer": "^8.2.4",
+        "lolcatjs": "^2.4.1"
     },
     "author": "AZERTY#9999",
     "keywords": [],

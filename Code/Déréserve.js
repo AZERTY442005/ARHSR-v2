@@ -1,4 +1,4 @@
-
+// ©2022 AZERTY. All rights Reserved | AZERTY#9999
 function StopTimer(StartTimespan) {
     const EndTimespan = new Date()
     var Delay =(EndTimespan.getTime() - StartTimespan.getTime()) / 1000

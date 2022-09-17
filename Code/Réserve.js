@@ -1,4 +1,20 @@
-const { findOne } = require("../DataBase/schemas/users-schema")
+// ©2022 AZERTY. All rights Reserved | AZERTY#9999
+
+const fs = require("fs")
+var figlet = require("figlet")
+const lolcatjs = require("lolcatjs")
+const chalk = require("chalk")
+const inquirer = require("inquirer")
+
+function Banner() {
+    var banner = figlet.textSync("Réservateur Automatique", {
+        font: "Small",
+        horizontalLayout: "default",
+        width: 1000,
+        whitespaceBreak: true,
+    })
+    lolcatjs.fromString(banner)
+}
 
 function StopTimer(StartTimespan) {
     const EndTimespan = new Date()
@@ -8,32 +24,13 @@ function StopTimer(StartTimespan) {
 
 async function Reserve(login, password, restaurant) {
     for(let i = 0; i < 1; i++) {
-        console.log("Starting")
+        // console.log("Starting")
 
         StartTimespan = new Date()
     
         require("chromedriver")
 
         const fs = require("fs")
-    
-        // Include selenium webdriver
-
-
-
-        // let webdriver = require("selenium-webdriver")
-
-
-        // var webdriver = require('selenium-webdriver');
-        // var chrome = require('selenium-webdriver/chrome');
-        // var path = require('chromedriver').path;
-        
-        // var service = new chrome.ServiceBuilder(path).build();
-        // chrome.setDefaultService(service);
-        
-        // var driver = new webdriver.Builder()
-        // .withCapabilities(webdriver.Capabilities.chrome())
-        // .build();
-
 
         const path = require('path')
         const { ServiceBuilder } = require('selenium-webdriver/chrome')
@@ -49,7 +46,8 @@ async function Reserve(login, password, restaurant) {
         .setChromeService(serviceBuilder)
         .build();
 
-
+        console.clear()
+        Banner()
 
         // let driver = new webdriver.Builder()
         let browser = driver
@@ -63,12 +61,12 @@ async function Reserve(login, password, restaurant) {
     
     
         browser.get("https://charles-peguy.family-administration.skolengo.net/connexion?panel=signin#")
-        console.log("Opening Website")
+        // console.log("Opening Website")
     
         // let login = "enoal.fauchille@gmail.com"
         // let password = "Yoptoutlemonde4420053759*"
     
-        console.log("Logging In")
+        // console.log("Logging In")
         await browser.findElement(webdriver.By.id("login__signin-email")).sendKeys(login)
         await browser.findElement(webdriver.By.id("login__signin-password")).sendKeys(password)
         await browser.findElement(webdriver.By.xpath("//button[text()='Envoyer']")).click()
@@ -77,7 +75,7 @@ async function Reserve(login, password, restaurant) {
             browser.close()
             return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe n'existent pas dans notre base de données.", delay: StopTimer(StartTimespan)}
         }
-        console.log("Logged In")
+        // console.log("Logged In")
         await browser.findElement(webdriver.By.xpath("//div[text()='Réservation']")).click()
         await browser.findElement(webdriver.By.xpath("//a[text()='Réservation']")).click()
 
@@ -96,7 +94,11 @@ async function Reserve(login, password, restaurant) {
         // console.log(RestaurantXpath)
 
         // const Restaurant = await browser.findElement(webdriver.By.xpath("//*[@id='styleguides']/div[3]/div[2]/table/tbody/tr/td[4]/div/ul/li[5]/button"))
-        const Restaurant = await browser.findElement(webdriver.By.xpath(RestaurantXpath))
+        const Restaurant = await browser.findElement(webdriver.By.xpath(RestaurantXpath)).catch(()=>{})
+        if(!Restaurant) {
+            browser.close()
+            return {status: "Error", output: "Jour invalide ou liste des Restaurants introuvable.", delay: StopTimer(StartTimespan)}
+        }
         // console.log(Restaurant)
 
         await browser.executeScript("arguments[0].disabled = false", Restaurant) // Enable Element
