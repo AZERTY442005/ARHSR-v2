@@ -38,8 +38,8 @@ Banner()
 
 // Display Informations
 
-console.log(chalk.green("By AZERTY442005"))
-console.log(chalk.green("https://github.com/AZERTY442005\n\n"))
+console.log(chalk.greenBright("By AZERTY442005"))
+console.log(chalk.greenBright("https://github.com/AZERTY442005\n\n"))
 
 // console.log(chalk.cyan("Dependancies:"))
 // console.log(chalk.cyan("https://www.npmjs.com/package/v12-to-v13"))
@@ -113,7 +113,7 @@ async function Loop() {
                         // console.log(TimeFormat+" "+DateFormat)
             
                         if((TimeFormat=="18:20" && Logins.Class=="BTS") || 
-                        (TimeFormat=="12:25" && Logins.Class=="Terminale") || 
+                        (TimeFormat=="18:30" && Logins.Class=="Terminale") || 
                         (TimeFormat=="19:00" && Logins.Class=="Première") || 
                         (TimeFormat=="19:30" && Logins.Class=="Seconde")) {
                             ReservationWaiting.status = {status: false, restaurant: "", time: ""}
@@ -342,7 +342,7 @@ async function InstantReserve(Login, Password, Restaurant) {
             }
         })
     } else if(Output.status == "Success") {
-        Message = `${chalk.red(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        Message = `${chalk.greenBright(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
         await inquirer.prompt([
             {
                 type: "list",
@@ -382,7 +382,7 @@ async function InstantDereserve(Login, Password) {
             }
         })
     } else if(Output.status == "Success") {
-        Message = `${chalk.red(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        Message = `${chalk.greenBright(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
         await inquirer.prompt([
             {
                 type: "list",
