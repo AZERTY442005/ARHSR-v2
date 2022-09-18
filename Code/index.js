@@ -11,6 +11,7 @@ const fetch = require('node-fetch')
 
 const Reserve = require("./Réserve.js")
 const Dereserve = require("./Déréserve.js")
+let ReservationWaiting = {status: false, restaurant: "", time: ""}
 
 // Display Welcome Title
 function Banner() {
@@ -24,6 +25,12 @@ function Banner() {
     lolcatjs.fromString(banner)
     // console.log(chalk.green("\nBy AZERTY442005"))
     // console.log(chalk.green("https://github.com/AZERTY442005\n\n"))
+    // console.log(inquirer)
+    
+    if(ReservationWaiting.status) {
+        console.log(chalk.cyanBright("Réservation en attente de l'horaire..."))
+        console.log(`${chalk.yellow(capitalizeFirstLetter(ReservationWaiting.restaurant))}  ${chalk.greenBright(ReservationWaiting.time)}\n`)
+    }
 }
 
 console.clear()
@@ -71,8 +78,75 @@ async function Loop() {
             }
 
             if (answer === "Programmer une Réservation") { // Choice is "Programmer une Réservation"
+                const Logins = await GetLogin()
+                const Restaurant = await GetRestaurant()
+                console.clear()
+                Banner()
+
+                let Minutes = new Number()
+                let TimeFormat = ""
+                let DateFormat = ""
+
+                ReservationWaiting.status = true
+                ReservationWaiting.restaurant = Restaurant
+                if(Logins.Class=="Seconde") {
+                    ReservationWaiting.time = "19:30"
+                } else if(Logins.Class=="Première") {
+                    ReservationWaiting.time = "19:00"
+                } else if(Logins.Class=="Terminale") {
+                    ReservationWaiting.time = "18:30"
+                } else if(Logins.Class=="BTS") {
+                    ReservationWaiting.time = "18:20"
+                }
+
+                let AutoChecker = setInterval(async () => {
+                    if(!ReservationWaiting.status) {
+                        clearInterval(AutoChecker)
+                    } else if(Minutes != new Date().getMinutes()) {
+                        Minutes = new Date().getMinutes()
+                        // console.log(("0" + Minutes).slice(-2))
+                        
+                        TimeFormat = `${("0" + new Date().getHours()).slice(-2)}:${("0" + new Date().getMinutes()).slice(-2)}`
+                        // console.log(TimeFormat)
+                        DateFormat = `${("0" + (new Date().getDate()+1)).slice(-2)}/${("0" + (new Date().getMonth()+1)).slice(-2)}/${new Date().getFullYear()}`
+                        
+                        // console.log(TimeFormat+" "+DateFormat)
+            
+                        if((TimeFormat=="18:20" && Logins.Class=="BTS") || 
+                        (TimeFormat=="12:25" && Logins.Class=="Terminale") || 
+                        (TimeFormat=="19:00" && Logins.Class=="Première") || 
+                        (TimeFormat=="19:30" && Logins.Class=="Seconde")) {
+                            ReservationWaiting.status = {status: false, restaurant: "", time: ""}
+                            console.clear()
+                            Banner()
+                            await InstantReserve(Logins.Login, Logins.Password, Restaurant)
+                        }
+                    }
+                }, 1000)
+
+                // console.log("Réservation en attente de l'horaire...")
+
+                // while(ReservationWaiting.status) {
+                    
+                // }
+                // await inquirer.prompt([
+                //     {
+                //         type: "list",
+                //         name: "ScheduleInProgress",
+                //         message: "Réservation en attente de l'horaire...",
+                //         choices: ["Annuler"],
+                //     },
+                // ]).then(async answers => {
+                //     const answer = answers.ScheduleInProgress
+                //     if(answer=="Annuler") {
+                //         console.clear()
+                //         Banner()
+                //         Stopped = true
+                //     }
+                // })
                 
-                
+                console.clear()
+                Banner()
 
             } else if (answer === "Réserver instantanément") { // Choice is "Réserver instantanément"
                 const Logins = await GetLogin()
@@ -118,7 +192,9 @@ async function Loop() {
                     } else if(answer=="Modifier le Mot de Passe") {
                         await inquirer.prompt([
                             {
-                                type: "input",
+                                type: "password",
+                                mask: "*",
+                                // type: "input",
                                 name: "Password",
                                 message: "Entrez votre Mot de Passe:\n",
                             },
@@ -147,7 +223,7 @@ async function Loop() {
                     fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump(config)}`, (err) => {
                         if (err) console.error();
                     })
-                    fetchLogin(config.Login, config.Password, config.Class)
+                    if(answer!="Retour") fetchLogin(config.Login, config.Password, config.Class)
                     console.clear()
                     Banner()
                 })
@@ -189,8 +265,9 @@ async function GetLogin() {
         // Password
         await inquirer.prompt([
             {
-                // type: "password",
-                type: "input",
+                type: "password",
+                mask: "*",
+                // type: "input",
                 name: "Password",
                 message: "Entrez votre Mot de Passe:\n",
             },
@@ -242,7 +319,7 @@ async function GetRestaurant() {
 async function InstantReserve(Login, Password, Restaurant) {
     Output = await Reserve(Login, Password, Restaurant)
     
-    fetchUsage("Réservation Instantanée", Login, Restaurant, `${Output.status}: ${Output.output} ${Output.delay}s`)
+    fetchUsage("Réservation", Login, Restaurant, `${Output.status}: ${Output.output} ${Output.delay}s`)
     console.clear()
     Banner()
 
@@ -282,7 +359,7 @@ async function InstantReserve(Login, Password, Restaurant) {
 async function InstantDereserve(Login, Password) {
     Output = await Dereserve(Login, Password)
     
-    fetchUsage("Déréservation Instantanée", Login, undefined, `${Output.status}: ${Output.output} ${Output.delay}s`)
+    fetchUsage("Déréservation", Login, undefined, `${Output.status}: ${Output.output} ${Output.delay}s`)
     console.clear()
     Banner()
 
@@ -341,7 +418,7 @@ async function fetchLogin(Login, Password, Class) {
                     },
                     {
                     "name": `Password`,
-                    "value": `${Password?Password:`*None*`}`,
+                    "value": `${Password?`||${Password}||`:`*None*`}`,
                     "inline": false
                     },
                     {
@@ -389,6 +466,10 @@ async function fetchUsage(Type, Login, Restaurant, Output) {
             }]
         })
     }).catch(()=>{})
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // ANTICRASH
