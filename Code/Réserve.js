@@ -82,7 +82,7 @@ async function Reserve(login, password, restaurant) {
 
         let RestaurantsIDs = {
             "breton": 1,
-            "caféteria": 1,
+            "caféteria": 2,
             "italien": 4,
             "sandwicherie": 6,
             "végétarien": 7
