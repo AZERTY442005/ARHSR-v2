@@ -1,9 +1,10 @@
-// ©2022 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. All rights Reserved | AZERTY#9999
 
 // const fs = require("fs")
 var figlet = require("figlet")
 const lolcatjs = require("lolcatjs")
 const chalk = require("chalk")
+const { waitForDebugger } = require("inspector")
 // const inquirer = require("inquirer")
 
 function Banner() {
@@ -20,6 +21,14 @@ function StopTimer(StartTimespan) {
     const EndTimespan = new Date()
     var Delay =(EndTimespan.getTime() - StartTimespan.getTime()) / 1000
     return Delay
+}
+
+function sleep(milliseconds) {
+    const date = Date.now()
+    let currentDate = null
+    do {
+        currentDate = Date.now()
+    } while (currentDate - date < milliseconds)
 }
 
 async function Reserve(login, password, restaurant) {
@@ -39,12 +48,12 @@ async function Reserve(login, password, restaurant) {
 
         // console.log(path)
         // console.log(__dirname)
-        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver.exe")
+        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 109.exe")
         const serviceBuilder = new ServiceBuilder(ChromeDriverPath);
         const driver = await new Builder()
         .forBrowser('chrome')
         .setChromeService(serviceBuilder)
-        .build();
+        .build()
 
         console.clear()
         Banner()
@@ -64,16 +73,13 @@ async function Reserve(login, password, restaurant) {
         browser.get("https://charles-peguy.family-administration.skolengo.net/connexion?panel=signin#")
         // console.log("Opening Website")
     
-        // let login = "enoal.fauchille@gmail.com"
-        // let password = "Yoptoutlemonde4420053759*"
-    
         // console.log("Logging In")
         await browser.findElement(webdriver.By.id("login__signin-email")).sendKeys(login)
         await browser.findElement(webdriver.By.id("login__signin-password")).sendKeys(password)
         await browser.findElement(webdriver.By.xpath("//button[text()='Envoyer']")).click()
         const LoginFailed = await browser.findElement(webdriver.By.xpath("//*[@id='login__panel-signin']/div[2]")).catch(()=>{})
         if(LoginFailed) {
-            browser.close()
+            await browser.close()
             return {status: "Error", output: "Nous n'avons pas réussi à vous connecter. L'email ou le mot de passe doivent être incorrectes.", delay: StopTimer(StartTimespan)}
         }
         // console.log("Logged In")
@@ -97,14 +103,20 @@ async function Reserve(login, password, restaurant) {
         // const Restaurant = await browser.findElement(webdriver.By.xpath("//*[@id='styleguides']/div[3]/div[2]/table/tbody/tr/td[4]/div/ul/li[5]/button"))
         const Restaurant = await browser.findElement(webdriver.By.xpath(RestaurantXpath)).catch(()=>{})
         if(!Restaurant) {
-            browser.close()
+            await browser.close()
             return {status: "Error", output: "Jour invalide ou liste des Restaurants introuvable.", delay: StopTimer(StartTimespan)}
         }
         // console.log(Restaurant)
 
+        // sleep(2000)
+
         await browser.executeScript("arguments[0].disabled = false", Restaurant) // Enable Element
 
+        // sleep(2000)
+
         await Restaurant.click()
+        
+        // sleep(2000)
 
         await browser.findElement(webdriver.By.xpath("//button[text()='Valider']")).click()
 

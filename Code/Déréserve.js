@@ -1,4 +1,4 @@
-// ©2022 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. All rights Reserved | AZERTY#9999
 
 // const fs = require("fs")
 var figlet = require("figlet")
@@ -33,16 +33,26 @@ async function Dereserve(login, password) {
         const fs = require("fs")
     
         // Include selenium webdriver
+
+        const { ServiceBuilder } = require('selenium-webdriver/chrome')
+        const { Builder } = require('selenium-webdriver')
         let webdriver = require("selenium-webdriver")
-        let driver = new webdriver.Builder()
-        let browser = driver
+
+        // let driver = new webdriver.Builder()
+        // let browser = driverconst path = require('path')
+        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 109.exe")
+        const serviceBuilder = new ServiceBuilder(ChromeDriverPath);
+        const driver = await new Builder()
         .forBrowser("chrome")
-        .setChromeOptions("./chromedriver.exedsq")
+        .setChromeService(serviceBuilder)
+        // .setChromeOptions("./chromedriver.exedsq")
         .build()
         
         console.clear()
         Banner()
         console.log(chalk.cyanBright("Déréservation en cours. Veuillez patienter ..."))
+        
+        let browser = driver
     
         // console.log(webdriver)
         // console.log(browser)

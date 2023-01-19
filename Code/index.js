@@ -1,4 +1,4 @@
-// ©2022 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. All rights Reserved | AZERTY#9999
 
 // Importations
 const fs = require("fs")
@@ -172,7 +172,7 @@ async function Loop() {
                     
                     let config = yaml.load(fs.readFileSync("./Code/config.yaml", "utf8"))
                     if(!config) {
-                        fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
+                        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
                             if (err) console.error();
                         })
                         config = {Login: "", Password: "", Class: ""}
@@ -215,12 +215,12 @@ async function Loop() {
                             config.Class = answer
                         })
                     } else if(answer=="Réinitialiser") {
-                        // fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
+                        // fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
                         //     if (err) console.error();
                         // })
                         config = {Login: "", Password: "", Class: ""}
                     }
-                    fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump(config)}`, (err) => {
+                    fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump(config)}`, (err) => {
                         if (err) console.error();
                     })
                     if(answer!="Retour") fetchLogin(config.Login, config.Password, config.Class)
@@ -238,7 +238,7 @@ async function Loop() {
 async function GetLogin() {
     let config = yaml.load(fs.readFileSync("./Code/config.yaml", "utf8"))
     if(!config) {
-        fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
+        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
             if (err) console.error();
         })
         config = {Login: "", Password: "", Class: ""}
@@ -290,7 +290,7 @@ async function GetLogin() {
         })
 
         // Write Datas
-        fs.writeFile("./Code/config.yaml", `# ©2022 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump({Login: Login, Password: Password, Class: Class})}`, (err) => {
+        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump({Login: Login, Password: Password, Class: Class})}`, (err) => {
             if (err) console.error();
         })
         fetchLogin(Login, Password, Class)
@@ -316,31 +316,52 @@ async function GetRestaurant() {
     return Restaurant
 }
 
-async function InstantReserve(Login, Password, Restaurant) {
+function sleep(milliseconds) {
+    const date = Date.now()
+    let currentDate = null
+    do {
+        currentDate = Date.now()
+    } while (currentDate - date < milliseconds)
+}
+
+async function InstantReserve(Login, Password, Restaurant, Tries = 1) {
     Output = await Reserve(Login, Password, Restaurant)
-    
+    console.log(Output)
+
     fetchUsage("Réservation", Login, Restaurant, `${Output.status}: ${Output.output} ${Output.delay}s`)
     console.clear()
     Banner()
 
     let Message
     if(Output.status == "Error") {
-        Message = `${chalk.red(`Erreur: ${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
-        await inquirer.prompt([
-            {
-                type: "list",
-                name: "Error",
-                message: Message,
-                choices: ["Réésayer", "Annuler"],
-            },
-        ]).then(async answers => {
-            const answer = answers.Error
-            if(answer=="Réésayer") {
-                console.clear()
-                Banner()
-                await InstantReserve(Login, Password, Restaurant)
-            }
-        })
+        if(Tries < 5) { // Récursivité
+            // console.clear()
+            // Banner()
+            console.log(`${chalk.red(`Erreur: ${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`)
+            console.log(`${chalk.yellow(`Tentative n°${Tries+1} dans 5 secondes`)}`)
+            // setTimeout(async () => {
+                // await InstantReserve(Login, Password, Restaurant, Tries+1)
+            // }, 5000)
+            sleep(5000)
+            await InstantReserve(Login, Password, Restaurant, Tries+1)
+        } else { // Condition de Sortie 
+            Message = `${chalk.red(`Erreur: ${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+            await inquirer.prompt([
+                {
+                    type: "list",
+                    name: "Error",
+                    message: Message,
+                    choices: ["Réésayer", "Annuler"],
+                },
+            ]).then(async answers => {
+                const answer = answers.Error
+                if(answer=="Réésayer") {
+                    console.clear()
+                    Banner()
+                    await InstantReserve(Login, Password, Restaurant)
+                }
+            })
+        }
     } else if(Output.status == "Success") {
         Message = `${chalk.greenBright(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
         await inquirer.prompt([
