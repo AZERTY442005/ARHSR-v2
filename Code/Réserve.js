@@ -23,7 +23,7 @@ function StopTimer(StartTimespan) {
     return Delay
 }
 
-function sleep(milliseconds) {
+async function sleep(milliseconds) {
     const date = Date.now()
     let currentDate = null
     do {
@@ -48,7 +48,7 @@ async function Reserve(login, password, restaurant) {
 
         // console.log(path)
         // console.log(__dirname)
-        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 109.exe")
+        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 113.exe")
         const serviceBuilder = new ServiceBuilder(ChromeDriverPath);
         const driver = await new Builder()
         .forBrowser('chrome')
@@ -108,11 +108,12 @@ async function Reserve(login, password, restaurant) {
         }
         // console.log(Restaurant)
 
-        // sleep(2000)
+        // await sleep(20000)
 
         await browser.executeScript("arguments[0].disabled = false", Restaurant) // Enable Element
 
         // sleep(2000)
+        // await sleep(20000)
 
         await Restaurant.click()
         

