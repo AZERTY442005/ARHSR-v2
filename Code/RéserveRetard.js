@@ -1,4 +1,4 @@
-// ©2023 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999
 
 // const fs = require("fs")
 var figlet = require("figlet")
@@ -47,7 +47,7 @@ async function ReserveRetard(login, password, restaurants) {
 
         // console.log(path)
         // console.log(__dirname)
-        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver 113.exe")
+        const ChromeDriverPath = path.join(__dirname.replace("\\Functions", "").replace("/Functions", ""), "chromedriver.exe")
         const serviceBuilder = new ServiceBuilder(ChromeDriverPath);
         const driver = await new Builder()
         .forBrowser('chrome')

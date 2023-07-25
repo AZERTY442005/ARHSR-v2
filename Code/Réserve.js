@@ -1,4 +1,4 @@
-// ©2023 AZERTY. All rights Reserved | AZERTY#9999
+// ©2023 AZERTY. Open Source since 07/06/2023 | AZERTY#9999
 
 // const fs = require("fs")
 var figlet = require("figlet")

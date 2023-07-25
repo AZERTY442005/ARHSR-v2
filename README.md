@@ -28,4 +28,4 @@ La Première version consistant à utiliser un Robot automatisé par Discord est
 [Discord Server](https://discord.gg/WZv9zh5mZJ)
 
 <br/>
-Credits: © 2022 AZERTY44. All rights Reserved | AZERTY#9999
+Credits: © 2022 AZERTY44. Open Source since 07/06/2023 | AZERTY#9999
