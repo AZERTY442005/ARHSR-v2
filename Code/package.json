@@ -5,7 +5,7 @@
     "Author": "AZERTY#9999",
     "license": "MIT",
     "dependencies": {
-        "chromedriver": "^105.0.0",
+        "chromedriver": "^119.0.1",
         "figlet": "^1.5.2",
         "fs": "^0.0.1-security",
         "inquirer": "^8.2.4",
